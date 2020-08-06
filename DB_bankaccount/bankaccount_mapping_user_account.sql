@@ -1,0 +1,57 @@
+-- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
+--
+-- Host: localhost    Database: bankaccount
+-- ------------------------------------------------------
+-- Server version	5.7.26-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `mapping_user_account`
+--
+
+DROP TABLE IF EXISTS `mapping_user_account`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `mapping_user_account` (
+  `uaid` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` int(11) NOT NULL,
+  `atid` int(11) NOT NULL,
+  `account_number` varchar(16) CHARACTER SET latin1 NOT NULL,
+  `balance_amount` double NOT NULL DEFAULT '0',
+  `created_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_modified` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`uaid`),
+  UNIQUE KEY `account_number_UNIQUE` (`account_number`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='Storing user and associated account type';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mapping_user_account`
+--
+
+LOCK TABLES `mapping_user_account` WRITE;
+/*!40000 ALTER TABLE `mapping_user_account` DISABLE KEYS */;
+INSERT INTO `mapping_user_account` VALUES (1,1,1,'6789000000225001',15340.23,'2020-08-05 16:40:31',NULL),(2,2,3,'6789000000225002',152760.34,'2020-08-05 16:42:47',NULL),(3,3,3,'6789000000225003',329904.21,'2020-08-05 16:42:47',NULL),(4,4,2,'6789000000225004',128343.67,'2020-08-05 16:44:22',NULL),(5,5,2,'6789000000225005',728569.01,'2020-08-05 16:44:22',NULL),(6,2,2,'6789000000225006',90123.66,'2020-08-05 16:53:56',NULL),(7,5,3,'6789000000225007',1200000,'2020-08-05 16:56:49',NULL),(9,3,2,'6789000000225008',83400.18,'2020-08-05 16:59:24',NULL),(10,3,1,'6789000000225009',32000.06,'2020-08-05 16:59:24',NULL);
+/*!40000 ALTER TABLE `mapping_user_account` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-08-06 11:55:08
